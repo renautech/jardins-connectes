@@ -65,11 +65,8 @@ const Operations = ({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submit');
     submitUserOperation();
   };
-
-  console.log('USERBOARD', operation.userBoards);
 
   return (
     <div className="operation">

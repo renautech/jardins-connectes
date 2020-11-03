@@ -8,6 +8,7 @@ import operations from './operations';
 import profile from './profile';
 import profileEdit from './profileEdit';
 import operationList from './operationList';
+import adminPage from './adminPage';
 
 export default combineReducers({
   weather,
@@ -18,4 +19,5 @@ export default combineReducers({
   profile,
   profileEdit,
   operationList,
+  adminPage,
 });

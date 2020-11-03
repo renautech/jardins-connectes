@@ -16,6 +16,7 @@ import NavigationMobile from 'src/containers/NavigationMobile';
 import Garden from 'src/containers/Garden';
 import Profile from 'src/containers/Profile';
 import ProfileEdit from 'src/containers/ProfileEdit';
+import AdminPage from 'src/components/AdminPage';
 
 import dataUser from 'src/data/dataFake';
 import './style.scss';
@@ -86,6 +87,15 @@ const JardinConnectes = ({
         )}
         <Page>
           <OperationList dataOperations={dataUser.operation} />
+        </Page>
+      </Route>
+
+      <Route exact path="/administration">
+        {/* {!isLogged && (
+          <Redirect to="/connexion" />
+        )} */}
+        <Page>
+          <AdminPage />
         </Page>
       </Route>
 

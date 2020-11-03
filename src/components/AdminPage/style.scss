@@ -1,0 +1,82 @@
+@use 'src/styles/vars' as v;
+
+.adminpage {
+  background-color: white;
+  font-family: "Chilanka";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  border: 1px black solid;
+  height: 75vh;
+  -webkit-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+
+  &__form {
+    background-color: darkgrey;
+    width: 23%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid black;
+    text-align: center;
+
+    &__title {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    &__subtitle {
+      padding-top: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    &__get1 {
+      background-color: grey;
+      height: 65%;
+      max-height: 65%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      &__info {
+        text-align: left;
+        padding: 0.2rem;
+        margin: 0.2rem;
+        background-color: gainsboro;
+        border: 1px solid black;
+      }
+    }
+    &__get2 {
+      text-align: center;
+      &__button {
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        padding: 0.2rem;
+        font-size: 1rem;
+      }
+    }
+
+    &__families1 {
+      background-color: gainsboro;
+      margin-top: 1rem;
+      & input {
+        width: 80%;
+        padding: 0.4rem;
+        font-size: 1rem;
+        margin-top: 0.4rem;
+      }
+      &__button {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        padding: 0.2rem;
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}

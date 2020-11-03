@@ -18,7 +18,6 @@ const myGarden = (store) => (next) => (action) => {
       store.dispatch(loadingUserFamilies());
       axios.get(`${serverIp}/v1/families/user/connected`, { withCredentials: true })
         .then(function (res) {
-          console.log('request picture', res);
           store.dispatch(saveUserFamilies(res.data));
         })
         .catch(function (error) {

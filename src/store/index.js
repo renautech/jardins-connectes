@@ -13,6 +13,7 @@ import operations from '../middleware/operations';
 import profile from '../middleware/profile';
 import profileEdit from '../middleware/profileEdit';
 import operationList from '../middleware/operationList';
+import adminPage from '../middleware/adminPage';
 
 // == Enhancers
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -27,6 +28,7 @@ const enhancers = composeEnhancers(
     profile,
     profileEdit,
     operationList,
+    adminPage,
     thunk,
   ),
 );

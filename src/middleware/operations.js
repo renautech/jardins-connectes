@@ -43,7 +43,6 @@ const operations = (store) => (next) => (action) => {
     case GET_USER_BOARDS: {
       axios.get(`${serverIp}/v1/boards/users/user`, { withCredentials: true })
         .then(function (res) {
-          console.log('bonjour2');
           store.dispatch(saveUserBoards(res.data));
         })
         .catch(function (error) {

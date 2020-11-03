@@ -3,6 +3,8 @@ import OperationList from 'src/components/OperationList';
 
 import {
   getFamilyOperations,
+  getActiveFamilies,
+  getSelectedBoard,
   deleteOperation,
 } from 'src/actions/operationList';
 
@@ -16,6 +18,12 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getFamilyOperations: () => {
     dispatch(getFamilyOperations());
+  },
+  getActiveFamilies: () => {
+    dispatch(getActiveFamilies());
+  },
+  getSelectedBoard: (id) => {
+    dispatch(getSelectedBoard(id));
   },
   deleteOperation: (id) => {
     dispatch(deleteOperation(id));

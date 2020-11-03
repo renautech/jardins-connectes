@@ -2,7 +2,7 @@
 
 .operationList {
   background: url(https://images.pexels.com/photos/1000057/pexels-photo-1000057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-  background-position: center;
+  background-position: top;
   background-size: cover;
   font-family: "Chilanka";
   min-height: 300px;
@@ -16,6 +16,7 @@
   box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
   border-radius: 25px;
   border: 1px black solid;
+  min-height: 60vh;
 
   &__title {
     margin: v.$m-gut 0;

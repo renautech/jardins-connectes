@@ -27,12 +27,6 @@ const Navigation = ({ isLogged }) => {
           <NavLink to="/" className="navigation__nav__link" activeClassName="navigation__nav__link--active" exact>
             Accueil
           </NavLink>
-          <NavLink to="/connexion" className="navigation__nav__link" activeClassName="navigation__nav__link--active" exact>
-            Mon Jardin
-          </NavLink>
-          <NavLink to="/mon-profil" className="navigation__nav__link" activeClassName="navigation__nav__link--active" exact>
-            Mon profil
-          </NavLink>
         </div>
         )}
       </nav>

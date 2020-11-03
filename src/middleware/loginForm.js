@@ -7,6 +7,7 @@ import {
   loginError,
   loggedOut,
 } from 'src/actions/loginForm';
+import { enableLoading } from 'src/actions/profile';
 
 import { serverIp } from 'src/selectors/serverInfo';
 
@@ -19,6 +20,8 @@ const loginForm = (store) => (next) => (action) => {
           if (res.data.state === true) {
             // console.log('logged');
             store.dispatch(isLogged());
+            // Authorize fetching new profile data at next profile component rendering
+            store.dispatch(enableLoading());
           }
           else {
             console.log(res.data.message);

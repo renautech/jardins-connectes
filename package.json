@@ -57,8 +57,10 @@
   "dependencies": {
     "@babel/runtime": "^7.12.1",
     "axios": "^0.20.0",
+    "concat-stream": "^2.0.0",
     "date-fns": "^2.16.1",
     "form-data": "^3.0.0",
+    "fs": "^0.0.1-security",
     "prop-types": "^15.7.2",
     "rc-select": "^11.4.2",
     "react": "^16.13.1",

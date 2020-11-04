@@ -1,6 +1,7 @@
 import {
   SAVE_INFOS,
   CHANGE_FORM_VALUES,
+  RESET_FORM_VALUES,
 } from 'src/actions/adminPage';
 
 export const initialState = {
@@ -22,6 +23,14 @@ const adminPage = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
+      };
+    case RESET_FORM_VALUES:
+      return {
+        ...state,
+        nameInput: '',
+        description: '',
+        targetId: '',
+        file: '',
       };
     default:
       return state;

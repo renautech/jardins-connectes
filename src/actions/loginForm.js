@@ -5,6 +5,16 @@ export const IS_LOGGED = 'IS_LOGGED';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGOUT = 'LOGOUT';
 export const LOGGED_OUT = 'LOGGED_OUT';
+export const GET_ADMIN = 'GET_ADMIN';
+export const IS_ADMIN = 'IS_ADMIN';
+
+export const getAdmin = () => ({
+  type: GET_ADMIN,
+});
+
+export const isAdmin = () => ({
+  type: IS_ADMIN,
+});
 
 export const changeEmail = (email) => ({
   type: CHANGE_EMAIL,

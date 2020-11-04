@@ -5,7 +5,10 @@ import { NavLink } from 'react-router-dom';
 
 import './style.scss';
 
-const Navigation = ({ isLogged }) => {
+const Navigation = ({
+  isLogged,
+  isAdmin,
+}) => {
   return (
     <div className="navigation">
       <nav className="navigation__nav">
@@ -20,6 +23,11 @@ const Navigation = ({ isLogged }) => {
           <NavLink to="/mon-profil" className="navigation__nav__link" activeClassName="navigation__nav__link--active" exact>
             Mon profil
           </NavLink>
+          {isAdmin && (
+            <NavLink to="/administration" className="navigation__nav__link" activeClassName="navigation__nav__link--active" exact>
+              Admin
+            </NavLink>
+          )}
         </div>
         )}
         {!isLogged && (
@@ -36,6 +44,7 @@ const Navigation = ({ isLogged }) => {
 
 Navigation.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  isAdmin: PropTypes.bool.isRequired,
 };
 
 export default Navigation;

@@ -16,7 +16,7 @@ import NavigationMobile from 'src/containers/NavigationMobile';
 import Garden from 'src/containers/Garden';
 import Profile from 'src/containers/Profile';
 import ProfileEdit from 'src/containers/ProfileEdit';
-import AdminPage from 'src/components/AdminPage';
+import AdminPage from 'src/containers/AdminPage';
 
 import dataUser from 'src/data/dataFake';
 import './style.scss';
@@ -24,6 +24,7 @@ import OperationList from 'src/containers/OperationList';
 
 const JardinConnectes = ({
   isLogged,
+  isAdmin,
   isSigned,
   profileEdition,
 }) => {
@@ -91,9 +92,9 @@ const JardinConnectes = ({
       </Route>
 
       <Route exact path="/administration">
-        {/* {!isLogged && (
+        {!isAdmin && (
           <Redirect to="/connexion" />
-        )} */}
+        )}
         <Page>
           <AdminPage />
         </Page>
@@ -104,6 +105,7 @@ const JardinConnectes = ({
 };
 
 JardinConnectes.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
   isLogged: PropTypes.bool.isRequired,
   isSigned: PropTypes.bool.isRequired,
   profileEdition: PropTypes.bool.isRequired,

@@ -4,6 +4,7 @@ import {
   IS_LOGGED,
   LOGIN_ERROR,
   LOGGED_OUT,
+  IS_ADMIN,
 } from 'src/actions/loginForm';
 
 export const initialState = {
@@ -12,6 +13,7 @@ export const initialState = {
   isLogged: false,
   checkLogged: false,
   loginError: '',
+  isAdmin: '',
 };
 
 const loginForm = (state = initialState, action = {}) => {
@@ -42,11 +44,17 @@ const loginForm = (state = initialState, action = {}) => {
         isLogged: false,
         checkLogged: true,
         loginError: '',
+        isAdmin: '',
       };
     case LOGIN_ERROR:
       return {
         ...state,
         loginError: action.error,
+      };
+    case IS_ADMIN:
+      return {
+        ...state,
+        isAdmin: true,
       };
     default:
       return state;

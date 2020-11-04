@@ -3,9 +3,11 @@ import axios from 'axios';
 import {
   LOGIN,
   LOGOUT,
+  GET_ADMIN,
   isLogged,
   loginError,
   loggedOut,
+  isAdmin,
 } from 'src/actions/loginForm';
 import { enableLoading } from 'src/actions/profile';
 
@@ -37,6 +39,21 @@ const loginForm = (store) => (next) => (action) => {
       axios.delete(`${serverIp}/v1/signout`, { withCredentials: true })
         .then((res) => {
           store.dispatch(loggedOut());
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      break;
+    }
+    case GET_ADMIN: {
+      axios.get(`${serverIp}/v1/users`, { withCredentials: true })
+        .then((res) => {
+          if (res.data.state === false) {
+            console.log('not admin');
+          }
+          else {
+            store.dispatch(isAdmin());
+          }
         })
         .catch((error) => {
           console.error(error);

@@ -46,6 +46,9 @@
         margin: 0.2rem;
         background-color: gainsboro;
         border: 1px solid black;
+        &-text {
+          display: block;
+        }
       }
     }
     &__get2 {

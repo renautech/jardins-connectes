@@ -1,9 +1,14 @@
 import {
   SAVE_INFOS,
+  CHANGE_FORM_VALUES,
 } from 'src/actions/adminPage';
 
 export const initialState = {
   infos: [],
+  nameInput: '',
+  description: '',
+  targetId: '',
+  file: '',
 };
 
 const adminPage = (state = initialState, action = {}) => {
@@ -12,6 +17,11 @@ const adminPage = (state = initialState, action = {}) => {
       return {
         ...state,
         infos: action.infos,
+      };
+    case CHANGE_FORM_VALUES:
+      return {
+        ...state,
+        [action.name]: action.value,
       };
     default:
       return state;

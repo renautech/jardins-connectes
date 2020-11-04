@@ -12,11 +12,13 @@ import './style.scss';
 const AdminPage = ({
   adminStore,
   getInfos,
+  adminReqPost,
+  changeFormValues,
 }) => {
   return (
     <div className="adminpage">
       <FormGet getInfos={getInfos} adminStore={adminStore} />
-      <FormFamilies />
+      <FormFamilies adminReqPost={adminReqPost} changeFormValues={changeFormValues} />
       <FormVarieties />
       <FormOperationsTypes />
     </div>
@@ -26,6 +28,8 @@ const AdminPage = ({
 AdminPage.propTypes = {
   adminStore: PropTypes.object.isRequired,
   getInfos: PropTypes.func.isRequired,
+  adminReqPost: PropTypes.func.isRequired,
+  changeFormValues: PropTypes.func.isRequired,
 };
 
 export default AdminPage;

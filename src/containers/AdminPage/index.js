@@ -3,6 +3,8 @@ import AdminPage from 'src/components/AdminPage';
 
 import {
   getInfos,
+  adminReqPost,
+  changeFormValues,
 } from 'src/actions/adminPage';
 
 const mapStateToProps = (state) => ({
@@ -12,6 +14,12 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getInfos: (name) => {
     dispatch(getInfos(name));
+  },
+  adminReqPost: (name) => {
+    dispatch(adminReqPost(name));
+  },
+  changeFormValues: (name, value) => {
+    dispatch(changeFormValues(name, value));
   },
 });
 

@@ -13,6 +13,7 @@ const MyGarden = ({
   getUserEmptyBoards,
   getOperationTypes,
   getUserBoards,
+  getAdmin,
   userFamilies,
   userEmptyBoards,
   isLogged,
@@ -21,6 +22,7 @@ const MyGarden = ({
 }) => {
   useEffect(() => {
     if (isLogged) {
+      getAdmin();
       getUserBoards();
       getUserFamilies();
       getUserEmptyBoards();
@@ -73,6 +75,7 @@ const MyGarden = ({
 };
 
 MyGarden.propTypes = {
+  getAdmin: PropTypes.func.isRequired,
   getUserFamilies: PropTypes.func.isRequired,
   getUserEmptyBoards: PropTypes.func.isRequired,
   getOperationTypes: PropTypes.func.isRequired,

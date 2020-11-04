@@ -3,6 +3,7 @@ import JardinConnectes from 'src/components/JardinConnectes';
 
 const mapStateToProps = (state) => ({
   isLogged: state.loginForm.isLogged,
+  isAdmin: state.loginForm.isAdmin,
   isSigned: state.signupForm.isSigned,
   profileEdition: state.profile.profileEdition,
 });

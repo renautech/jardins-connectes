@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -8,28 +9,26 @@ const FormGet = ({
   adminStore,
   getInfos,
 }) => {
-  const fake = [
-    {
-      name: 'Michel',
-      age: 15,
-    },
-    {
-      name: 'Michel',
-      age: 19,
-    },
-    {
-      name: 'Michel',
-      age: 39,
-    },
-  ];
-
   const handleOnSubmit = (event) => {
+    event.preventDefault();
     console.log(event.target.name);
     getInfos(event.target.name);
-    event.preventDefault();
   };
 
-  // const showInfo = adminStore.infos.map((unit) => {
+  console.log(adminStore.infos);
+
+  const showInfo = adminStore.infos.map((unit) => {
+    return (
+      <div className="adminpage__form__get1__info">
+        <p className="adminpage__form__get1__info-text">Id :  {unit.id}</p>
+        <p className="adminpage__form__get1__info-text">Nom : {unit.name}</p>
+        <p className="adminpage__form__get1__info-text">Description : {unit.description}</p>
+        <p className="adminpage__form__get1__info-text">Image : {unit.picture}</p>
+      </div>
+    );
+  });
+
+  // const showInfo = fake.map((unit) => {
   //   return (
   //     <div className="adminpage__form__get1__info">
   //       Nom : {unit.name}
@@ -37,23 +36,15 @@ const FormGet = ({
   //   );
   // });
 
-  const showInfo = fake.map((unit) => {
-    return (
-      <div className="adminpage__form__get1__info">
-        Nom : {unit.name}
-      </div>
-    );
-  });
-
   return (
     <div className="adminpage__form">
       <div className="adminpage__form__get1">
         {showInfo}
       </div>
       <div className="adminpage__form__get2">
-        <form name="users" onSubmit={handleOnSubmit}>
+        {/* <form name="users" onSubmit={handleOnSubmit}>
           <button className="adminpage__form__get2__button" type="submit">Afficher tous les utilisateurs</button>
-        </form>
+        </form> */}
         <form name="families" onSubmit={handleOnSubmit}>
           <button className="adminpage__form__get2__button" type="submit">Afficher toutes les familles</button>
         </form>

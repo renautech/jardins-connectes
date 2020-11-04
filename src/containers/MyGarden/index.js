@@ -7,6 +7,8 @@ import {
   getOperationTypes,
 } from 'src/actions/myGarden';
 
+import { getAdmin } from 'src/actions/loginForm';
+
 import { setOperationListId } from 'src/actions/operationList';
 
 import { getUserBoards } from 'src/actions/operations';
@@ -35,6 +37,10 @@ const mapDispatchToProps = (dispatch) => ({
 
   getUserBoards: () => {
     dispatch(getUserBoards());
+  },
+
+  getAdmin: () => {
+    dispatch(getAdmin());
   },
 });
 

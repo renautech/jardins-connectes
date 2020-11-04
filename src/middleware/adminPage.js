@@ -29,7 +29,6 @@ const loginForm = (store) => (next) => (action) => {
       targetId,
     },
   } = store.getState();
-  console.log('CECI EST MON IMAGE', file);
   switch (action.type) {
     case GET_INFOS: {
       axios.get(`${serverIp}/v1/${action.name}`, { withCredentials: true })

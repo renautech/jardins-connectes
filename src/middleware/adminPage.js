@@ -45,6 +45,7 @@ const loginForm = (store) => (next) => (action) => {
       data.append('name', nameInput);
       data.append('description', description);
       data.append('image', file);
+
       axios.post(`${serverIp}/v1/${action.name}`,
         data,
         {
@@ -101,9 +102,15 @@ const loginForm = (store) => (next) => (action) => {
     }
     case ADMIN_FAMILY_PATCH: {
       const data = new FormData();
-      data.append('name', nameInput);
-      data.append('description', description);
-      data.append('image', file);
+      if (nameInput !== '') {
+        data.append('name', nameInput);
+      }
+      if (description !== '') {
+        data.append('description', description);
+      }
+      if (file !== '') {
+        data.append('image', file);
+      }
       axios.patch(`${serverIp}/v1/${action.name}/family/${parseInt(targetId, 10)}`,
         data,
         {
@@ -111,6 +118,54 @@ const loginForm = (store) => (next) => (action) => {
         })
         .then((res) => {
           console.log('PATCH FAMILY', res);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      break;
+    }
+    case ADMIN_VARIETY_PATCH: {
+      const data = new FormData();
+      if (nameInput !== '') {
+        data.append('name', nameInput);
+      }
+      if (description !== '') {
+        data.append('description', description);
+      }
+      if (file !== '') {
+        data.append('image', file);
+      }
+      axios.patch(`${serverIp}/v1/${action.name}/variety/${parseInt(targetId, 10)}`,
+        data,
+        {
+          withCredentials: true,
+        })
+        .then((res) => {
+          console.log('PATCH VARIETY', res);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      break;
+    }
+    case ADMIN_OPERATION_TYPE_PATCH: {
+      const data = new FormData();
+      if (nameInput !== '') {
+        data.append('name', nameInput);
+      }
+      if (description !== '') {
+        data.append('description', description);
+      }
+      if (file !== '') {
+        data.append('image', file);
+      }
+      axios.patch(`${serverIp}/v1/${action.name}/operation_type/${parseInt(targetId, 10)}`,
+        data,
+        {
+          withCredentials: true,
+        })
+        .then((res) => {
+          console.log('PATCH OPERATION TYPE', res);
         })
         .catch((error) => {
           console.error(error);

@@ -6,6 +6,7 @@ import './style.scss';
 
 const FormVarieties = ({
   adminVarietyPost,
+  adminVarietyPatch,
   adminVarietyDelete,
   changeFormValues,
   resetFormValues,
@@ -13,6 +14,13 @@ const FormVarieties = ({
   const handleOnSubmitPost = (event) => {
     event.preventDefault();
     adminVarietyPost(event.target.name);
+    resetFormValues();
+    document.getElementById(event.target.id).reset();
+  };
+
+  const handleOnSubmitPatch = (event) => {
+    event.preventDefault();
+    adminVarietyPatch(event.target.name);
     resetFormValues();
     document.getElementById(event.target.id).reset();
   };
@@ -40,7 +48,7 @@ const FormVarieties = ({
         <h3 className="adminpage__form__subtitle">Création d'une variété</h3>
         <form id="4" name="varieties" onSubmit={handleOnSubmitPost} encType="multipart/form-data">
           <input onChange={onChange} type="text" name="nameInput" placeholder="Nom de la variété" />
-          <input onChange={onChange} type="text" name="targetId" placeholder="ID de la famille" />
+          <input onChange={onChange} type="number" name="targetId" placeholder="ID de la famille" />
           <input onChange={onChange} type="text" name="description" placeholder="Description" />
           <input onChange={onChange} type="file" name="file" />
           <button className="adminpage__form__families1__button" type="submit">Valider</button>
@@ -48,18 +56,18 @@ const FormVarieties = ({
       </div>
       <div className="adminpage__form__families1">
         <h3 className="adminpage__form__subtitle">Mise à jour d'une variété</h3>
-        <form>
-          <input type="text" name="id" placeholder="ID de la variété" />
-          <input type="text" name="name" placeholder="Nom de la variété" />
-          <input type="text" name="description" placeholder="Description" />
-          <input type="file" name="file" />
+        <form id="5" name="varieties" onSubmit={handleOnSubmitPatch} encType="multipart/form-data">
+          <input onChange={onChange} type="number" name="targetId" placeholder="ID de la variété" />
+          <input onChange={onChange} type="text" name="nameInput" placeholder="Nom de la variété" />
+          <input onChange={onChange} type="text" name="description" placeholder="Description" />
+          <input onChange={onChange} type="file" name="file" />
           <button className="adminpage__form__families1__button" type="submit">Valider</button>
         </form>
       </div>
       <div className="adminpage__form__families1">
         <h3 className="adminpage__form__subtitle">Suppression d'une variété</h3>
         <form id="6" name="varieties" onSubmit={handleOnSubmitDelete} encType="multipart/form-data">
-          <input onChange={onChange} type="text" name="targetId" placeholder="ID de la variété" />
+          <input onChange={onChange} type="number" name="targetId" placeholder="ID de la variété" />
           <button className="adminpage__form__families1__button" type="submit">Valider</button>
         </form>
       </div>
@@ -69,6 +77,7 @@ const FormVarieties = ({
 
 FormVarieties.propTypes = {
   adminVarietyPost: PropTypes.func.isRequired,
+  adminVarietyPatch: PropTypes.func.isRequired,
   adminVarietyDelete: PropTypes.func.isRequired,
   changeFormValues: PropTypes.func.isRequired,
   resetFormValues: PropTypes.func.isRequired,

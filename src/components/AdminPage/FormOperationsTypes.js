@@ -6,6 +6,7 @@ import './style.scss';
 
 const FormOperationsTypes = ({
   adminOperationTypePost,
+  adminOperationTypePatch,
   adminOperationTypeDelete,
   changeFormValues,
   resetFormValues,
@@ -13,6 +14,13 @@ const FormOperationsTypes = ({
   const handleOnSubmitPost = (event) => {
     event.preventDefault();
     adminOperationTypePost(event.target.name);
+    resetFormValues();
+    document.getElementById(event.target.id).reset();
+  };
+
+  const handleOnSubmitPatch = (event) => {
+    event.preventDefault();
+    adminOperationTypePatch(event.target.name);
     resetFormValues();
     document.getElementById(event.target.id).reset();
   };
@@ -47,11 +55,11 @@ const FormOperationsTypes = ({
       </div>
       <div className="adminpage__form__families1">
         <h3 className="adminpage__form__subtitle">Mise à jour d'une opération</h3>
-        <form>
-          <input type="text" name="id" placeholder="ID de l'opération" />
-          <input type="text" name="name" placeholder="Nom de l'opération" />
-          <input type="text" name="description" placeholder="Description" />
-          <input type="file" name="file" />
+        <form id="8" name="operation_types" onSubmit={handleOnSubmitPatch} encType="multipart/form-data">
+          <input onChange={onChange} type="number" name="targetId" placeholder="ID de l'opération" />
+          <input onChange={onChange} type="text" name="nameInput" placeholder="Nom de l'opération" />
+          <input onChange={onChange} type="text" name="description" placeholder="Description" />
+          <input onChange={onChange} type="file" name="file" />
           <button className="adminpage__form__families1__button" type="submit">Valider</button>
         </form>
       </div>
@@ -68,6 +76,7 @@ const FormOperationsTypes = ({
 
 FormOperationsTypes.propTypes = {
   adminOperationTypePost: PropTypes.func.isRequired,
+  adminOperationTypePatch: PropTypes.func.isRequired,
   adminOperationTypeDelete: PropTypes.func.isRequired,
   changeFormValues: PropTypes.func.isRequired,
   resetFormValues: PropTypes.func.isRequired,

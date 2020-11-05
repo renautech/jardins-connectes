@@ -21,7 +21,7 @@ const Header = ({ isLogged, logout, checkLogged }) => {
 
   return (
     <div className="header">
-      <span className="logo">LOGO</span>
+      <img className="logo" src="http://3.93.151.102:5555/dist/logo.png" alt="logo" width="79" />
       <h1 className="header-title"><NavLink to="/">LES JARDINS CONNECTES</NavLink></h1>
       <div className="header-links">
 

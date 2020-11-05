@@ -67,7 +67,7 @@ const FormFamilies = ({
       <div className="adminpage__form__families1">
         <h3 className="adminpage__form__subtitle">Suppression d'une famille</h3>
         <form id="3" name="families" onSubmit={handleOnSubmitDelete} encType="multipart/form-data">
-          <input onChange={onChange} type="text" name="targetId" placeholder="ID de la famille" />
+          <input onChange={onChange} type="number" name="targetId" placeholder="ID de la famille" />
           <button className="adminpage__form__families1__button" type="submit">Valider</button>
         </form>
       </div>

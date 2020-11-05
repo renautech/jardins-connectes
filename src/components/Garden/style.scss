@@ -46,6 +46,12 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      .__aaa {
+        display: none;
+      }
+      .__bbb {
+        display: none;
+      }
     }
   }
 }

@@ -29,6 +29,8 @@ const OneOperation = ({
 
   const foundType = operationTypes.find((type) => type.id === operation.operation_type_id);
 
+  const pictureBuild = `http://3.93.151.102:5555${foundType.picture}`;
+
   const comment = showOpDetail
     ? (
       <div className="oneOperation__element oneOperation__element--below">
@@ -50,7 +52,7 @@ const OneOperation = ({
     );
   return (
     <div className="oneOperation">
-      <img className="oneOperation__element__img" src="https://www.flaticon.com/svg/static/icons/svg/735/735044.svg" alt="logo opération" />
+      <img className="oneOperation__element__img" src={pictureBuild} alt="logo opération" />
       <span className="oneOperation__element__title">{foundType.description}</span>
       <span className="oneOperation__element__title">{date}</span>
       <span className="oneOperation__element__title">{operation.comment}</span>

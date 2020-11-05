@@ -107,7 +107,7 @@ const operations = (store) => (next) => (action) => {
         }
         else {
           axios.post(`${serverIp}/v1/operations/users/user`, {
-            operation_type_id: 2,
+            operation_type_id: 3,
             board_id: boardId,
             comment: comment,
           },
@@ -131,7 +131,7 @@ const operations = (store) => (next) => (action) => {
         }
         else {
           axios.post(`${serverIp}/v1/operations/users/user`, {
-            operation_type_id: 3,
+            operation_type_id: 1,
             board_id: boardId,
             comment: comment,
           },
@@ -168,7 +168,7 @@ const operations = (store) => (next) => (action) => {
         }
         else {
           axios.post(`${serverIp}/v1/operations/users/user`, {
-            operation_type_id: 4,
+            operation_type_id: 2,
             board_id: boardId,
             comment: comment,
           },
@@ -192,7 +192,7 @@ const operations = (store) => (next) => (action) => {
         }
         else {
           axios.post(`${serverIp}/v1/operations/users/user`, {
-            operation_type_id: 5,
+            operation_type_id: 6,
             board_id: boardId,
             product_name: product,
             comment: comment,
@@ -217,7 +217,7 @@ const operations = (store) => (next) => (action) => {
         }
         else {
           axios.post(`${serverIp}/v1/operations/users/user`, {
-            operation_type_id: 6,
+            operation_type_id: 7,
             board_id: boardId,
             product_name: product,
             comment: comment,
@@ -243,7 +243,7 @@ const operations = (store) => (next) => (action) => {
         }
         else {
           axios.post(`${serverIp}/v1/operations/users/user`, {
-            operation_type_id: 7,
+            operation_type_id: 8,
             board_id: boardId,
             comment: comment,
           },
@@ -267,7 +267,7 @@ const operations = (store) => (next) => (action) => {
         }
         else {
           axios.post(`${serverIp}/v1/operations/users/user`, {
-            operation_type_id: 8,
+            operation_type_id: 4,
             board_id: boardId,
             quantity: parseInt(quantity, 10),
             comment: comment,
@@ -292,7 +292,7 @@ const operations = (store) => (next) => (action) => {
         }
         else {
           axios.post(`${serverIp}/v1/operations/users/user`, {
-            operation_type_id: 9,
+            operation_type_id: 11,
             board_id: boardId,
           },
           {

@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './style.scss';
+import { serverIp } from 'src/selectors/serverInfo';
 
 const Header = ({ isLogged, logout, checkLogged }) => {
   const handleOnClick = () => {
@@ -21,7 +22,7 @@ const Header = ({ isLogged, logout, checkLogged }) => {
 
   return (
     <div className="header">
-      <img className="logo" src="http://3.93.151.102:5555/dist/logo.svg" alt="logo" width="79" />
+      <img className="logo" src={serverIp + "/images/logo.png"} alt="logo" width="79" />
       <h1 className="header-title"><NavLink to="/">LES JARDINS CONNECTES</NavLink></h1>
       <div className="header-links">
 

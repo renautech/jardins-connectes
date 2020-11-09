@@ -3,6 +3,7 @@ import axios from 'axios';
 import { UPDATE_PROFILE, disableProfileEdition, changeTownList } from 'src/actions/profileEdit';
 import { enableLoading, showProfileEdition } from 'src/actions/profile';
 import { eachMonthOfInterval } from 'date-fns';
+import { serverIp } from 'src/selectors/serverInfo';
 
 const profileEdit = (store) => (next) => (action) => {
   if (store.getState().profileEdit.newPostcodeFlag) {
@@ -37,7 +38,7 @@ const profileEdit = (store) => (next) => (action) => {
         }
       }
 
-      axios.patch('http://3.93.151.102:5555/v1/users/user', newdata, { withCredentials: true })
+      axios.patch(`${serverIp}/v1/users/user`, newdata, { withCredentials: true })
         .then(function (res) {
           // Authorize fetching new profile data at next profile component rendering
           store.dispatch(enableLoading());

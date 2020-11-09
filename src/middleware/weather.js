@@ -1,6 +1,7 @@
 /* eslint-disable prefer-arrow-callback */
 import axios from 'axios';
 import { GET_WEATHER, saveWeather, getWeather, GET_POSTCODE } from 'src/actions/weather';
+import { serverIp } from 'src/selectors/serverInfo';
 
 const weather = (store) => (next) => (action) => {
   switch (action.type) {
@@ -14,7 +15,7 @@ const weather = (store) => (next) => (action) => {
         });
       break;
     case GET_POSTCODE: {
-      axios.get('http://3.93.151.102:5555/v1/users/user', { withCredentials: true })
+      axios.get(`${serverIp}/v1/users/user`, { withCredentials: true })
         .then(function (res) {
           res.data.postcode !== '' ? 
             store.dispatch(getWeather(res.data.postcode)) :

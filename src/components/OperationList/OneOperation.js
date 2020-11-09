@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { parseISO, format } from 'date-fns';
+import { serverIp } from 'src/selectors/serverInfo';
 
 const OneOperation = ({
   operation,
@@ -29,7 +30,7 @@ const OneOperation = ({
 
   const foundType = operationTypes.find((type) => type.id === operation.operation_type_id);
 
-  const pictureBuild = `http://3.93.151.102:5555${foundType.picture}`;
+  const pictureBuild = `${serverIp}${foundType.picture}`;
 
   const comment = showOpDetail
     ? (

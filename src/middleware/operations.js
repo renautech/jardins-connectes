@@ -101,7 +101,7 @@ const operations = (store) => (next) => (action) => {
             });
         }
       }
-      if (operationType === 'Labourer') { // LABOURE
+      if (operationType === 'labourer') { // LABOURE
         if (boardId === '') {
           store.dispatch(sendNotificationWarning('Vous devez sélectionner une planche'));
         }
@@ -125,7 +125,7 @@ const operations = (store) => (next) => (action) => {
             });
         }
       }
-      if (operationType === 'Semer') { // SEMER SUR UNE PLANCHE
+      if (operationType === 'semer') { // SEMER SUR UNE PLANCHE
         if (boardId === '' || boardFamily === '' || boardVariety === '') {
           store.dispatch(sendNotificationWarning('Vous devez sélectionner une planche, une famille et une variété de légume !'));
         }
@@ -162,7 +162,7 @@ const operations = (store) => (next) => (action) => {
             });
         }
       }
-      if (operationType === 'Arroser') { // ARROSER UNE PLANCHE
+      if (operationType === 'arroser') { // ARROSER UNE PLANCHE
         if (boardId === '') {
           store.dispatch(sendNotificationWarning('Vous devez sélectionner une planche !'));
         }
@@ -186,7 +186,7 @@ const operations = (store) => (next) => (action) => {
             });
         }
       }
-      if (operationType === 'Fertiliser') { // FERTILISER UNE PLANCHE
+      if (operationType === 'fertiliser') { // FERTILISER UNE PLANCHE
         if (boardId === '' || product === '') {
           store.dispatch(sendNotificationWarning('Vous devez sélectionner une planche et un fertilisant !'));
         }
@@ -211,7 +211,7 @@ const operations = (store) => (next) => (action) => {
             });
         }
       }
-      if (operationType === 'Traiter') { // TRAITER UNE PLANCHE
+      if (operationType === 'traiter') { // TRAITER UNE PLANCHE
         if (boardId === '' || product === '' || quantity === '') {
           store.dispatch(sendNotificationWarning('Vous devez sélectionner une planche, un produit et une quantité !'));
         }
@@ -237,7 +237,7 @@ const operations = (store) => (next) => (action) => {
             });
         }
       }
-      if (operationType === 'Désherber') { // DESHERBER UNE PLANCHE
+      if (operationType === 'désherber') { // DESHERBER UNE PLANCHE
         if (boardId === '') {
           store.dispatch(sendNotificationWarning('Vous devez sélectionner une planche !'));
         }
@@ -261,7 +261,7 @@ const operations = (store) => (next) => (action) => {
             });
         }
       }
-      if (operationType === 'Récolter') { // RECOLTER UNE PLANCHE
+      if (operationType === 'récolter') { // RECOLTER UNE PLANCHE
         if (boardId === '') {
           store.dispatch(sendNotificationWarning('Vous devez sélectionner une planche et la quantité de votre récolte !'));
         }

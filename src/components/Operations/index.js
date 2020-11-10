@@ -88,14 +88,14 @@ const Operations = ({
           <Confirm />
         </form>
       )}
-      {operation.operationType === 'Labourer' && (
+      {operation.operationType === 'labourer' && (
         <form action="post" onSubmit={handleSubmit}>
           <SelectField name="boardName" onChange={handleOnChangeBoard} data={operation.userBoards} placeholder="Quelle planche labourer ?" />
           <CommentField name="comment" onChange={handleOnChange} value={operation.comment} placeholder="Plus de détails..." />
           <Confirm />
         </form>
       )}
-      {operation.operationType === 'Semer' && (
+      {operation.operationType === 'semer' && (
         <form action="post" onSubmit={handleSubmit}>
           <SelectField name="boardName" onChange={handleOnChangeBoard} data={operation.userBoards} placeholder="Sur quelle planche ?" />
           <SelectField name="boardFamily" onChange={handleOnChangeFamilies} data={operation.families} placeholder="De quelle famille ?" />
@@ -103,14 +103,14 @@ const Operations = ({
           <Confirm />
         </form>
       )}
-      {operation.operationType === 'Arroser' && (
+      {operation.operationType === 'arroser' && (
         <form action="post" onSubmit={handleSubmit}>
           <SelectField name="boardName" onChange={handleOnChangeBoard} data={operation.userBoards} placeholder="Quelle planche arroser ?" />
           <CommentField name="comment" onChange={handleOnChange} value={operation.comment} placeholder="Plus de détails..." />
           <Confirm />
         </form>
       )}
-      {operation.operationType === 'Fertiliser' && (
+      {operation.operationType === 'fertiliser' && (
         <form action="post" onSubmit={handleSubmit}>
           <SelectField name="boardName" onChange={handleOnChangeBoard} data={operation.userBoards} placeholder="Quelle planche fertiliser ?" />
           <Field name="product" onChange={handleOnChange} value={operation.product} placeholder="Avec quel fertilisant ?" />
@@ -118,7 +118,7 @@ const Operations = ({
           <Confirm />
         </form>
       )}
-      {operation.operationType === 'Traiter' && (
+      {operation.operationType === 'traiter' && (
         <form action="post" onSubmit={handleSubmit}>
           <SelectField name="boardName" onChange={handleOnChangeBoard} data={operation.userBoards} placeholder="Quelle planche traiter ?" />
           <Field name="product" onChange={handleOnChange} value={operation.product} placeholder="Avec quel produit ?" />
@@ -127,14 +127,14 @@ const Operations = ({
           <Confirm />
         </form>
       )}
-      {operation.operationType === 'Désherber' && (
+      {operation.operationType === 'désherber' && (
         <form action="post" onSubmit={handleSubmit}>
           <SelectField name="boardName" onChange={handleOnChangeBoard} data={operation.userBoards} placeholder="Quelle planche désherber ?" />
           <CommentField name="comment" onChange={handleOnChange} placeholder="De quelle manière ?" />
           <Confirm />
         </form>
       )}
-      {operation.operationType === 'Récolter' && (
+      {operation.operationType === 'récolter' && (
         <form action="post" onSubmit={handleSubmit}>
           <SelectField name="boardName" onChange={handleOnChangeBoard} data={operation.userBoards} placeholder="Quelle planche récolter ?" />
           <Field name="quantity" onChange={handleOnChange} value={operation.quantity} placeholder="Quelle quantité ? (en kg)" />

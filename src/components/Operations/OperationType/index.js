@@ -22,7 +22,9 @@ const OperationType = ({
       {!loadingOpType && (
       <select onChange={handleOpType} name={name} id={name} value={value}>
           <option value="">Quelle opération effectuer ?</option>
+          <option value="Créer une planche">Créer une planche</option>
           {opTypeList}
+          <option value="Supprimer une planche">Supprimer une planche</option>
           {/* <option value="Créer une planche">Créer une planche</option>
           <option value="Labourer">Labourer</option>
           <option value="Semer">Semer</option>

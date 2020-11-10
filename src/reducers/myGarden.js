@@ -10,6 +10,7 @@ export const initialState = {
   userEmptyBoards: [],
   operationTypes: [],
   loading: true,
+  loadingOpType: true,
 };
 
 const myGarden = (state = initialState, action = {}) => {
@@ -30,7 +31,7 @@ const myGarden = (state = initialState, action = {}) => {
       return {
         ...state,
         operationTypes: action.operationTypes,
-        loading: false,
+        loadingOpType: false,
       };
     case LOADING_USER_FAMILIES:
       return {

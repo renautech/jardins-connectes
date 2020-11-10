@@ -23,6 +23,8 @@ const Operations = ({
   getVarieties,
   isLogged,
   submitUserOperation,
+  operationTypes,
+  loadingOpType,
 }) => {
   useEffect(() => {
     if (isLogged) {
@@ -71,7 +73,13 @@ const Operations = ({
   return (
     <div className="operation">
       <h2 className="operation__title">Opérations</h2>
-      <OperationType name="operationType" handleOpType={handleOnChangeType} value={operation.operationType} />
+      <OperationType 
+        name="operationType" 
+        handleOpType={handleOnChangeType}
+        value={operation.operationType}
+        operationTypes={operationTypes}
+        loadingOpType={loadingOpType} 
+      />
 
       {operation.operationType === 'Créer une planche' && (
         <form action="post" onSubmit={handleSubmit}>
@@ -156,6 +164,7 @@ Operations.propTypes = {
   resetOperationsValue: PropTypes.func.isRequired,
   submitUserOperation: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  loadingOpType: PropTypes.bool.isRequired,
 };
 
 export default Operations;

@@ -14,7 +14,7 @@ const VarietyField = ({
 }) => {
   const varieties = data.map((option) => {
     return (
-      <Options key={option.family_id} keyData={option.family_id} value={option.name} />
+      <Options key={option.id} keyData={option.id} value={option.name} />
     );
   });
 

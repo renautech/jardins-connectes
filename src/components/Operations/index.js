@@ -7,6 +7,7 @@ import Field from './Field';
 import CommentField from './CommentField';
 import SelectField from './SelectField';
 import VarietyField from './VarietyField';
+import FamilyField from './FamilyField';
 import Confirm from './Confirm';
 
 import './style.scss';
@@ -98,7 +99,7 @@ const Operations = ({
       {operation.operationType === 'semer' && (
         <form action="post" onSubmit={handleSubmit}>
           <SelectField name="boardName" onChange={handleOnChangeBoard} data={operation.userBoards} placeholder="Sur quelle planche ?" />
-          <SelectField name="boardFamily" onChange={handleOnChangeFamilies} data={operation.families} placeholder="De quelle famille ?" />
+          <FamilyField name="boardFamily" onChange={handleOnChangeFamilies} data={operation.families} placeholder="De quelle famille ?" />
           <VarietyField name="boardVariety" onChange={handleOnChangeVarieties} data={operation.varieties} target={operation.boardFamily} placeholder="De quelle variété ?" />
           <Confirm />
         </form>

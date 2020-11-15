@@ -6,33 +6,33 @@ import Options from './Options';
 
 import './style.scss';
 
-const VarietyField = ({
+const FamilyField = ({
   onChange,
   data,
   placeholder,
   name,
 }) => {
-  const varieties = data.map((option) => {
+  const options = data.map((option) => {
     return (
       <Options key={option.family_id} keyData={option.family_id} value={option.name} />
     );
   });
 
   return (
-    <div className="varietyfield">
-      <select name={name} onChange={onChange} id={name}>
+    <div className="selectfield">
+      <select name={name} onChange={onChange}>
         <option value="">{placeholder}</option>
-        {varieties}
+        {options}
       </select>
     </div>
   );
 };
 
-VarietyField.propTypes = {
+FamilyField.propTypes = {
   onChange: PropTypes.func.isRequired,
   data: PropTypes.array.isRequired,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
 
-export default VarietyField;
+export default FamilyField;

@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Options from 'src/components/Operations/SelectField/Options';
+import Options from './Options';
 
 import './style.scss';
 

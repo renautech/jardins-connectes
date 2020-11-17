@@ -5,18 +5,18 @@ import { NavLink } from 'react-router-dom';
 
 import './style.scss';
 
-const EmptyBoards = ({ type, picture }) => {
+
+const EmptyBoard = ({ name }) => {
   return (
-    <div className="mygarden__emptyboard">
-      <img className="mygarden__emptyboard--image" src="https://static.vecteezy.com/system/resources/thumbnails/000/349/304/small/Construction__28122_29.jpg" alt="famille de légume" />
-      <p className="mygarden__emptyboard--text">{type}</p>
+    <div className="myGarden__element myGarden__element--emptyboard">
+      <img className="myGarden__element--image" src="https://static.vecteezy.com/system/resources/thumbnails/000/349/304/small/Construction__28122_29.jpg" alt="famille de légume" />
+      <p className="myGarden__element--text">{name}</p>
     </div>
   );
 };
 
-EmptyBoards.propTypes = {
-  type: PropTypes.string.isRequired,
-  picture: PropTypes.string.isRequired,
+EmptyBoard.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
-export default EmptyBoards;
+export default EmptyBoard;

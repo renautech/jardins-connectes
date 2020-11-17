@@ -82,7 +82,7 @@ const operations = (store) => (next) => (action) => {
           axios.post(`${serverIp}/v1/boards/users/user`, {
             name: boardName,
             active: true,
-            variety_id: 1,
+            //variety_id: 1,
           },
           {
             withCredentials: true,

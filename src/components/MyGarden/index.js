@@ -46,13 +46,23 @@ const MyGarden = ({
     );
   });
 
+  const EmptyBoards = userEmptyBoards.map((emptyBoard) => {
+    return (
+      <EmptyBoard
+        key={emptyBoard.id}
+        name={emptyBoard.name}
+      />
+    )
+  })
+
   return (
-    <div className="mygarden">
-      <h2 className="mygarden__title">Mon Jardin</h2>
+    <div className="myGarden">
+      <h2 className="myGarden__title">Mon Jardin</h2>
       {!loading && (
-        <div className="mygarden__families">
+        <div className="myGarden__content">
+
           {Families}
-          {/* {EmptyBoards} */}
+          {EmptyBoards}
         </div>
       )}
       {loading && (

@@ -14,10 +14,10 @@ const Family = ({
 }) => {
   const pictureBuild = `${serverIp}${picture}`;
   return (
-    <div className="mygarden__family">
-      <NavLink onClick={() => handleOnClick(family)} className="mygarden__navlink" to="/liste-operations">
-        <img className="mygarden__family--image" src={pictureBuild} alt="famille de légume" />
-        <p className="mygarden__family--text">{type}</p>
+    <div className="myGarden__element myGarden__element--family">
+      <NavLink onClick={() => handleOnClick(family)} className="myGarden__navlink" to="/liste-operations">
+        <img className="myGarden__element--image" src={pictureBuild} alt="famille de légume" />
+        <p className="myGarden__element--text">{type}</p>
       </NavLink>
     </div>
   );

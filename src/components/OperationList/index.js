@@ -11,7 +11,6 @@ import './style.scss';
 
 const OperationList = ({
   getFamilyOperations,
-  getEmptyBoardOperations,
   getActiveFamilies,
   getSelectedBoard,
   operationList,

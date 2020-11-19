@@ -3,6 +3,8 @@ import {
   SAVE_USER_EMPTY_BOARDS,
   SAVE_OPERATION_TYPES,
   LOADING_USER_FAMILIES,
+  ENABLE_FLAG_EMPTY_BOARD,
+  DISABLE_FLAG_EMPTY_BOARD,
 } from 'src/actions/myGarden';
 
 export const initialState = {
@@ -11,6 +13,7 @@ export const initialState = {
   operationTypes: [],
   loading: true,
   loadingOpType: true,
+  flagEmptyBoard: true,
 };
 
 const myGarden = (state = initialState, action = {}) => {
@@ -38,6 +41,16 @@ const myGarden = (state = initialState, action = {}) => {
         ...state,
         loading: true,
       };
+    case ENABLE_FLAG_EMPTY_BOARD:
+      return {
+        ...state,
+        flagEmptyBoard: true,
+      };
+    case DISABLE_FLAG_EMPTY_BOARD:
+      return {
+        ...state,
+        flagEmptyBoard: false,
+      }
     default:
       return state;
   }

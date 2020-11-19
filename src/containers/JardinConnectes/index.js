@@ -6,6 +6,7 @@ const mapStateToProps = (state) => ({
   isAdmin: state.loginForm.isAdmin,
   isSigned: state.signupForm.isSigned,
   profileEdition: state.profile.profileEdition,
+  flagEmptyBoard: state.myGarden.flagEmptyBoard,
 });
 
 const mapDispatchToProps = () => ({});

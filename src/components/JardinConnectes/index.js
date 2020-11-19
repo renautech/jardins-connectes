@@ -17,16 +17,18 @@ import Garden from 'src/containers/Garden';
 import Profile from 'src/containers/Profile';
 import ProfileEdit from 'src/containers/ProfileEdit';
 import AdminPage from 'src/containers/AdminPage';
+import OperationList from 'src/containers/OperationList';
+import OperationListEmptyBoard from 'src/containers/OperationListEmptyBoard';
 
 import dataUser from 'src/data/dataFake';
 import './style.scss';
-import OperationList from 'src/containers/OperationList';
 
 const JardinConnectes = ({
   isLogged,
   isAdmin,
   isSigned,
   profileEdition,
+  flagEmptyBoard,
 }) => {
   return (
     <div className="jardinconnectes">
@@ -87,9 +89,15 @@ const JardinConnectes = ({
           <Redirect to="/connexion" />
         )}
         <Page>
-          <OperationList dataOperations={dataUser.operation} />
+          {flagEmptyBoard && (
+            <OperationListEmptyBoard />
+          )}
+          {!flagEmptyBoard && (
+            <OperationList dataOperations={dataUser.operation} />
+          )}
         </Page>
       </Route>
+
 
       <Route exact path="/administration">
         {!isAdmin && (

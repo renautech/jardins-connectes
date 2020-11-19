@@ -1,8 +1,9 @@
 import {
-  SAVE_FAMILY_OPERATIONS,
+  SAVE_OPERATIONS,
   SAVE_ACTIVE_FAMILIES,
   SAVE_SELECTED_BOARD,
   SET_OPERATIONLIST_ID,
+  SET_EMPTY_BOARD,
 } from 'src/actions/operationList';
 
 export const initialState = {
@@ -11,6 +12,7 @@ export const initialState = {
   familyInfo: {},
   activeFamilies: [],
   selectedBoard: [],
+  emptyBoard: [],
 };
 
 const operationList = (state = initialState, action = {}) => {
@@ -20,7 +22,12 @@ const operationList = (state = initialState, action = {}) => {
         ...state,
         familyInfo: action.infos,
       };
-    case SAVE_FAMILY_OPERATIONS:
+    case SET_EMPTY_BOARD:
+      return {
+        ...state,
+        emptyBoard: action.board,
+      };
+    case SAVE_OPERATIONS:
       return {
         ...state,
         data: action.operations,

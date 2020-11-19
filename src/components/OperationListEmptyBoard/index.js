@@ -9,10 +9,8 @@ import OneOperation from 'src/components/OperationList/OneOperation';
 
 import './style.scss';
 
-const OperationList = ({
-  getFamilyOperations,
+const OperationListEmptyBoard = ({
   getEmptyBoardOperations,
-  getActiveFamilies,
   getSelectedBoard,
   operationList,
   operationTypes,
@@ -22,8 +20,7 @@ const OperationList = ({
 }) => {
   useEffect(() => {
     if (isLogged) {
-      getFamilyOperations();
-      getActiveFamilies();
+      getEmptyBoardOperations();
     }
   }, []);
 
@@ -60,14 +57,6 @@ const OperationList = ({
       <img className="operationList__img" src={pictureBuild} alt="vegetable" />
       <div className="operationList__bloc">
         <div>
-          <Select
-            className="operationList__select"
-            classNamePrefix="react-select"
-            name="color"
-            options={options}
-            placeholder="Choisir une planche"
-            onChange={handleOnChange}
-          />
           {operations}
         </div>
       </div>
@@ -75,7 +64,7 @@ const OperationList = ({
   );
 };
 
-OperationList.propTypes = {
+OperationListEmptyBoard.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   getFamilyOperations: PropTypes.func.isRequired,
   getActiveFamilies: PropTypes.func.isRequired,
@@ -86,4 +75,4 @@ OperationList.propTypes = {
   deleteOperation: PropTypes.func.isRequired,
 };
 
-export default OperationList;
+export default OperationListEmptyBoard;

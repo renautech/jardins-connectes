@@ -5,6 +5,8 @@ export const SAVE_USER_FAMILIES = 'SAVE_USER_FAMILIES';
 export const SAVE_USER_EMPTY_BOARDS = 'SAVE_USER_EMPTY_BOARDS';
 export const SAVE_OPERATION_TYPES = 'SAVE_OPERATION_TYPES';
 export const LOADING_USER_FAMILIES = 'LOADING_USER_FAMILIES';
+export const ENABLE_FLAG_EMPTY_BOARD = 'ENABLE_FLAG_EMPTY_BOARD';
+export const DISABLE_FLAG_EMPTY_BOARD = 'DISABLE_FLAG_EMPTY_BOARD';
 
 export const getUserFamilies = () => ({
   type: GET_USER_FAMILIES,
@@ -35,4 +37,12 @@ export const getUserEmptyBoards = () => ({
 export const saveUserEmptyBoards = (emptyBoards) => ({
   type: SAVE_USER_EMPTY_BOARDS,
   emptyBoards,
+});
+
+export const enableFlagEmptyBoard = () => ({
+  type: ENABLE_FLAG_EMPTY_BOARD,
+});
+
+export const disableFlagEmptyBoard = () => ({
+  type: DISABLE_FLAG_EMPTY_BOARD,
 });

@@ -5,11 +5,13 @@ import {
   getUserFamilies,
   getUserEmptyBoards,
   getOperationTypes,
+  enableFlagEmptyBoard, 
+  disableFlagEmptyBoard
 } from 'src/actions/myGarden';
 
 import { getAdmin } from 'src/actions/loginForm';
 
-import { setOperationListId } from 'src/actions/operationList';
+import { setOperationListId, setEmptyBoard } from 'src/actions/operationList';
 
 import { getUserBoards } from 'src/actions/operations';
 
@@ -34,6 +36,9 @@ const mapDispatchToProps = (dispatch) => ({
   setOperationListId: (infos) => {
     dispatch(setOperationListId(infos));
   },
+  setEmptyBoard: (board) => {
+    dispatch(setEmptyBoard(board));
+  },
 
   getUserBoards: () => {
     dispatch(getUserBoards());
@@ -41,6 +46,13 @@ const mapDispatchToProps = (dispatch) => ({
 
   getAdmin: () => {
     dispatch(getAdmin());
+  },
+
+  enableFlagEmptyBoard: () => {
+    dispatch(enableFlagEmptyBoard());
+  },
+  disableFlagEmptyBoard: () => {
+    dispatch(disableFlagEmptyBoard());
   },
 });
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import OperationList from 'src/components/OperationList';
+import OperationListEmptyBoard from 'src/components/OperationListEmptyBoard';
 
 import {
   getFamilyOperations,
@@ -7,7 +7,7 @@ import {
   getSelectedBoard,
   deleteOperation,
   getEmptyBoardOperations,
-} from 'src/actions/operationList';
+} from 'src/actions/operationListEmptyBoard';
 
 const mapStateToProps = (state) => ({
   operationList: state.operationList,
@@ -35,4 +35,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(OperationList);
+export default connect(mapStateToProps, mapDispatchToProps)(OperationListEmptyBoard);

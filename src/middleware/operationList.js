@@ -2,11 +2,12 @@
 import axios from 'axios';
 import {
   GET_FAMILY_OPERATIONS,
+  GET_EMPTY_BOARD_OPERATIONS,
   DELETE_OPERATION,
   GET_ACTIVE_FAMILIES,
   GET_SELECTED_BOARD,
   getFamilyOperations,
-  saveFamilyOperations,
+  saveOperations,
   saveActiveFamilies,
   saveSelectedBoard,
 } from 'src/actions/operationList';
@@ -17,6 +18,7 @@ const operationList = (store) => (next) => (action) => {
   const {
     operationList: {
       familyInfo,
+      emptyBoard,
     },
   } = store.getState();
 
@@ -24,8 +26,18 @@ const operationList = (store) => (next) => (action) => {
     case GET_FAMILY_OPERATIONS: {
       axios.get(`${serverIp}/v1/operations/families/family/${parseInt(familyInfo.id, 10)}/users/user`, { withCredentials: true })
         .then(function (res) {
-          console.log('FAMILY OPERATIONS', res);
-          store.dispatch(saveFamilyOperations(res.data));
+            store.dispatch(saveOperations(res.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      break;
+    }
+    case GET_EMPTY_BOARD_OPERATIONS: {
+      axios.get(`http://localhost:5555/v1/operations/boards/board/${parseInt(emptyBoard.id)}`, { withCredentials: true })
+        .then(function (res) {
+          console.log('BOARD OPERATIONS', res);
+          store.dispatch(saveOperations(res.data));
         })
         .catch(function (error) {
           console.log(error);

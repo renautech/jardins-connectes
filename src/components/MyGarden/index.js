@@ -7,6 +7,7 @@ import Family from './Family';
 import EmptyBoard from './EmptyBoard';
 
 import './style.scss';
+import { setEmptyBoardId } from '../../actions/operationList';
 
 const MyGarden = ({
   getUserFamilies,
@@ -19,6 +20,9 @@ const MyGarden = ({
   isLogged,
   loading,
   setOperationListId,
+  setEmptyBoard,
+  enableFlagEmptyBoard,
+  disableFlagEmptyBoard,
 }) => {
   useEffect(() => {
     if (isLogged) {
@@ -30,16 +34,24 @@ const MyGarden = ({
     }
   }, []);
 
-  const handleOnClick = (family) => {
+  const handleOnClickFamily = (family) => {
     setOperationListId(family);
+    // flagEmptyBoard at false to display operationlist by family
+    disableFlagEmptyBoard();
   };
+
+  const handleOnClickEmptyBoard = (board) => {
+    setEmptyBoard(board);
+    // flagEmptyBoard at true to display operationlist by empty board
+    enableFlagEmptyBoard();
+  };  
 
   const Families = userFamilies.map((family) => {
     return (
       <Family
         key={family.name}
         type={family.name}
-        handleOnClick={handleOnClick}
+        handleOnClick={handleOnClickFamily}
         family={family}
         picture={family.picture}
       />
@@ -51,6 +63,8 @@ const MyGarden = ({
       <EmptyBoard
         key={emptyBoard.id}
         name={emptyBoard.name}
+        board={emptyBoard}
+        handleOnClickEmptyBoard={handleOnClickEmptyBoard}
       />
     )
   })

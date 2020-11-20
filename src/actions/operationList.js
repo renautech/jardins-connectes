@@ -3,6 +3,7 @@ export const GET_FAMILY_OPERATIONS = 'GET_FAMILY_OPERATIONS';
 export const GET_ACTIVE_FAMILIES = 'GET_ACTIVE_FAMILIES';
 export const GET_SELECTED_BOARD = 'GET_SELECTED_BOARD';
 export const SAVE_OPERATIONS = 'SAVE_OPERATIONS';
+export const SAVE_FAMILY_OPERATIONS = 'SAVE_FAMILY_OPERATIONS';
 export const SAVE_ACTIVE_FAMILIES = 'SAVE_ACTIVE_FAMILIES';
 export const SAVE_SELECTED_BOARD = 'SAVE_SELECTED_BOARD';
 export const DELETE_OPERATION = 'DELETE_OPERATION';
@@ -55,5 +56,10 @@ export const saveSelectedBoard = (boards) => ({
 export const deleteOperation = (id) => ({
   type: DELETE_OPERATION,
   id,
+});
+
+export const saveFamilyOperations = (operations) => ({
+  type: SAVE_FAMILY_OPERATIONS,
+  operations,
 });
 

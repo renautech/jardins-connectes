@@ -59,8 +59,8 @@ const operationList = (store) => (next) => (action) => {
       axios.get(`${serverIp}/v1/operations/boards/board/${action.id}`, { withCredentials: true })
         .then(function (res) {
           console.log('Selected Boards operations', res.data);
-          store.dispatch(saveFamilyOperations(res.data));
           store.dispatch(saveSelectedBoard(res.data));
+          store.dispatch(saveOperations(res.data));
         })
         .catch(function (error) {
           console.log(error);

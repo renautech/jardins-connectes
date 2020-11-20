@@ -24,7 +24,7 @@ const operationList = (store) => (next) => (action) => {
 
   switch (action.type) {
     case GET_FAMILY_OPERATIONS: {
-      axios.get(`${serverIp}/v1/operations/families/family/${parseInt(familyInfo.id, 10)}/users/user`, { withCredentials: true })
+      axios.get(`${serverIp}/v1/operations/families/family/${parseInt(familyInfo.family_id, 10)}/users/user`, { withCredentials: true })
         .then(function (res) {
             store.dispatch(saveOperations(res.data));
         })
@@ -34,7 +34,7 @@ const operationList = (store) => (next) => (action) => {
       break;
     }
     case GET_EMPTY_BOARD_OPERATIONS: {
-      axios.get(`http://localhost:5555/v1/operations/boards/board/${parseInt(emptyBoard.id)}`, { withCredentials: true })
+      axios.get(`${serverIp}/v1/operations/boards/board/${parseInt(emptyBoard.id)}`, { withCredentials: true })
         .then(function (res) {
           console.log('BOARD OPERATIONS', res);
           store.dispatch(saveOperations(res.data));
@@ -45,7 +45,7 @@ const operationList = (store) => (next) => (action) => {
       break;
     }
     case GET_ACTIVE_FAMILIES: {
-      axios.get(`${serverIp}/v1/boards/families/family/${parseInt(familyInfo.id, 10)}/users/user`, { withCredentials: true })
+      axios.get(`${serverIp}/v1/boards/families/family/${parseInt(familyInfo.family_id, 10)}/users/user`, { withCredentials: true })
         .then(function (res) {
           console.log('Active families', res.data);
           store.dispatch(saveActiveFamilies(res.data));

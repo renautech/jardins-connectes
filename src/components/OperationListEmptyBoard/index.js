@@ -24,7 +24,7 @@ const OperationListEmptyBoard = ({
     }
   }, []);
 
-  const pictureBuild = `${serverIp}${operationList.familyInfo.picture}`;
+  const pictureBuild = `${serverIp}/images/icons8-spade-30.png`;
 
   const handleOnChange = (event) => {
     getSelectedBoard(event.value);

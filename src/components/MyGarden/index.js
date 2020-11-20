@@ -74,7 +74,6 @@ const MyGarden = ({
       <h2 className="myGarden__title">Mon Jardin</h2>
       {!loading && (
         <div className="myGarden__content">
-
           {Families}
           {EmptyBoards}
         </div>

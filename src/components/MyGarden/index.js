@@ -36,13 +36,11 @@ const MyGarden = ({
 
   const handleOnClickFamily = (family) => {
     setOperationListId(family);
-    // flagEmptyBoard at false to display operationlist by family
     disableFlagEmptyBoard();
   };
 
   const handleOnClickEmptyBoard = (board) => {
     setEmptyBoard(board);
-    // flagEmptyBoard at true to display operationlist by empty board
     enableFlagEmptyBoard();
   };  
 

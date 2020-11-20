@@ -12,7 +12,12 @@ const Family = ({
   family,
   handleOnClick,
 }) => {
-  const pictureBuild = `${serverIp}${picture}`;
+  let pictureBuild;
+  if(picture==='') {
+    pictureBuild = `${serverIp}/images/icons8-group-of-vegetables-96.png`;
+  } else {
+    pictureBuild = `${serverIp}${picture}`;
+  }
   return (
     <div className="myGarden__element myGarden__element--family">
       <NavLink onClick={() => handleOnClick(family)} className="myGarden__navlink" to="/liste-operations">

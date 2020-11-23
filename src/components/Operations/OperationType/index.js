@@ -13,7 +13,6 @@ const OperationType = ({
   operationTypes,
   loadingOpType,
 }) => {
-  console.log(`OperationTypes : ${operationTypes}`);
   const opTypeList = operationTypes.map( (operationType) => (
     <option value={operationType.name}>{operationType.name}</option>
   ));

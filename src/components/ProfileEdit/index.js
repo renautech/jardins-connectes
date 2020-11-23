@@ -15,9 +15,7 @@ const ProfileEdit = (
     changePostcode,
   },
 ) => {
-  console.log('profile : ', profile.nickName)
   const handleOnChange = (event) => {
-    console.log("handleonchange");
     changeProfileFormValue(event.target.value, event.target.name);
   };
 
@@ -27,13 +25,11 @@ const ProfileEdit = (
   };
 
   const handleOnSubmit = (event) => {
-    console.log("Submit update profile");
     event.preventDefault();
     updateProfile();
   };
 
   const handleOnCancel = (event) => {
-    console.log("Cancel update profile");
     event.preventDefault();
     disableProfileEdition();
   };

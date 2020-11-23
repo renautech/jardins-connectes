@@ -21,7 +21,6 @@ const loginForm = (store) => (next) => (action) => {
       axios.post(`${serverIp}/v1/signin`, { email, password }, { withCredentials: true })
         .then((res) => {
           if (res.data.state === true) {
-            console.log('login', res);
             // Authorize fetching new profile data at next profile component rendering
             store.dispatch(enableLoading());
             sessionStorage.setItem("login","user logged");

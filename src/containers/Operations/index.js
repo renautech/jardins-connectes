@@ -16,7 +16,7 @@ import {
 
 const mapStateToProps = (state) => ({
   operation: state.operations,
-  isLogged: state.loginForm.isLogged,
+  isLogged: state.jardinConnectes.isLogged,
   operationTypes: state.myGarden.operationTypes,
   loadingOpType: state.myGarden.loadingOpType,
 });

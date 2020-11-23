@@ -9,9 +9,7 @@ const profile = (store) => (next) => (action) => {
       if (store.getState().profile.loading) {
         axios.get(`${serverIp}/v1/users/user`, { withCredentials: true })
           .then(function (res) {
-            console.log('requête profile réussie');
             // update state with user profile data
-            console.log('Données profil : ', res.data);
             store.dispatch(loadProfile(res.data));
           })
           .catch(function (error) {

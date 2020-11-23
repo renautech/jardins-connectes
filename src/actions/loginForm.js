@@ -1,7 +1,6 @@
 export const CHANGE_EMAIL = 'CHANGE_EMAIL';
 export const CHANGE_PASSWORD = 'CHANGE_PASSWORD';
 export const LOGIN = 'LOGIN';
-export const IS_LOGGED = 'IS_LOGGED';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGOUT = 'LOGOUT';
 export const LOGGED_OUT = 'LOGGED_OUT';
@@ -28,10 +27,6 @@ export const changePassword = (password) => ({
 
 export const login = () => ({
   type: LOGIN,
-});
-
-export const isLogged = () => ({
-  type: IS_LOGGED,
 });
 
 export const loginError = (error) => ({

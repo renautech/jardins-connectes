@@ -21,6 +21,7 @@ const OperationList = ({
 }) => {
   useEffect(() => {
     if (isLogged) {
+      console.log('useEffect isLogged operationlist')
       getFamilyOperations();
       getActiveFamilies();
     }
@@ -31,7 +32,7 @@ const OperationList = ({
   const handleOnChange = (event) => {
     getSelectedBoard(event.value);
   };
-
+  
   const options = operationList.activeFamilies.map((family) => {
     return {
       value: family.id,

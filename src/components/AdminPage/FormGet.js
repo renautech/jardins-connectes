@@ -11,11 +11,8 @@ const FormGet = ({
 }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target.name);
     getInfos(event.target.name);
   };
-
-  console.log(adminStore.infos);
 
   const showInfo = adminStore.infos.map((unit) => {
     return (
@@ -27,14 +24,6 @@ const FormGet = ({
       </div>
     );
   });
-
-  // const showInfo = fake.map((unit) => {
-  //   return (
-  //     <div className="adminpage__form__get1__info">
-  //       Nom : {unit.name}
-  //     </div>
-  //   );
-  // });
 
   return (
     <div className="adminpage__form">

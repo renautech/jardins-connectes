@@ -15,11 +15,11 @@ import { setOperationListId, setEmptyBoard } from 'src/actions/operationList';
 
 import { getUserBoards } from 'src/actions/operations';
 
-const mapStateToProps = (store) => ({
-  userFamilies: store.myGarden.userFamilies,
-  userEmptyBoards: store.myGarden.userEmptyBoards,
-  loading: store.myGarden.loading,
-  isLogged: store.loginForm.isLogged,
+const mapStateToProps = (state) => ({
+  userFamilies: state.myGarden.userFamilies,
+  userEmptyBoards: state.myGarden.userEmptyBoards,
+  loading: state.myGarden.loading,
+  isLogged: state.jardinConnectes.isLogged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

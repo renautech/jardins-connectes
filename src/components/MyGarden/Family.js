@@ -13,7 +13,6 @@ const Family = ({
   handleOnClick,
 }) => {
   let pictureBuild;
-  console.log(`Picture : ${picture}`);
   if(picture=='') {
     pictureBuild = `${serverIp}/images/icons8-group-of-vegetables-96.png`;
   } else {

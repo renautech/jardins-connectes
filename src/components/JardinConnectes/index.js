@@ -33,7 +33,6 @@ const JardinConnectes = ({
 }) => {
 
   useEffect( () => {
-    console.log('dans le useEffect de jardinConnectes')
     if (sessionStorage.getItem("login")) {
       logged();
     };
@@ -72,9 +71,6 @@ const JardinConnectes = ({
       </Route>
 
       <Route path="/inscription">
-        {logged && (
-          <Redirect to="/mon-jardin" />
-        )}
         {isSigned && (
           <Redirect to="/connexion" />
         )}
@@ -94,7 +90,7 @@ const JardinConnectes = ({
       </Route>
 
       <Route exact path="/liste-operations">
-        {logged && (
+        {!isLogged && (
           <Redirect to="/connexion" />
         )}
         <Page>

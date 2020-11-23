@@ -27,14 +27,6 @@ const loginForm = (state = initialState, action = {}) => {
         ...state,
         password: action.password,
       };
-    case IS_LOGGED:
-      return {
-        ...state,
-        email: '',
-        password: '',
-        isLogged: sessionStorage.getItem("login"),
-        loginError: '',
-      };
     case LOGGED_OUT:
       return {
         ...state,

@@ -64,7 +64,6 @@ const operations = (store) => (next) => (action) => {
       if (boardFamilyId != null) {
         axios.get(`${serverIp}/v1/varieties/families/family/${boardFamilyId}`, { withCredentials: true })
           .then(function (res) {
-            console.log('varieties', res);
             store.dispatch(saveVarieties(res.data));
           })
           .catch(function (error) {

@@ -13,7 +13,7 @@ const mapStateToProps = (state) => ({
   operationList: state.operationList,
   operationTypes: state.myGarden.operationTypes,
   userBoards: state.operations.userBoards,
-  isLogged: state.loginForm.isLogged,
+  isLogged: state.jardinConnectes.isLogged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

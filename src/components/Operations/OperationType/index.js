@@ -24,15 +24,6 @@ const OperationType = ({
           <option value="Créer une planche">Créer une planche</option>
           {opTypeList}
           <option value="Supprimer une planche">Supprimer une planche</option>
-          {/* <option value="Créer une planche">Créer une planche</option>
-          <option value="Labourer">Labourer</option>
-          <option value="Semer">Semer</option>
-          <option value="Arroser">Arroser</option>
-          <option value="Fertiliser">Fertiliser</option>
-          <option value="Traiter">Traiter</option>
-          <option value="Désherber">Désherber</option>
-          <option value="Récolter">Récolter</option>
-          <option value="Supprimer une planche">Supprimer une planche</option> */}
         </select>
       )}
       {loadingOpType && (

@@ -20,12 +20,17 @@ const Weather = ({
     <div className="weather">
       <h2 className="weather__title">Météo</h2>
       {!loading && (
-        <div className="weather__detail">
-          <img className="weather__icon" src={weather.icon} alt="" />
-          <span className="weather__temp">{weather.name}</span>
-          <span className="weather__name">{weather.temp}°C</span>
-          <span className="weather__name">Humidité {weather.humidity}%</span>
-        </div>
+        <>
+          <div className="weather__detail">
+            <img className="weather__icon" src={weather.icon} alt="" />
+            <div>
+
+            <div className="weather__name">{weather.name}</div>
+            <div className="weather__temp">{weather.temp}°C</div>
+            <div className="weather__name">Humidité {weather.humidity}%</div>
+            </div>
+          </div>
+        </>
       )}
       {loading && (
         <Loader />

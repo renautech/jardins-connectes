@@ -4,10 +4,11 @@
   text-align: center;
   &__submit {
     width: 40%;
-    background-color: v.$lighter-color;
+    background-color: v.$darker-color;
     padding: 1rem;
     border-radius: 15px;
     border : none;
-    margin-top: v.$s-gut;
+    margin-top: v.$xs-gut;
+    font-size: 1.2em;
   }
 }

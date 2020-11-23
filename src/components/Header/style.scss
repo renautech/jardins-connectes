@@ -6,12 +6,10 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  color: v.$white-color;
+  color: v.$light-color;
+  background-color: v.$darker-color;
   height: 5em;
   align-items: center;
-  background-image: url(https://images.pexels.com/photos/4112228/pexels-photo-4112228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-  background-size: 100%;
-  background-position: center -30rem;
 
   &-image {
     width: 100px;
@@ -44,7 +42,8 @@
   &-title {
     font-size: 2rem;
     font-family: "Capture It";
-    text-shadow: 2px 2px 1px black;
+    color: v.$medium-color;
+    text-shadow: 2px 2px 1px v.$darker-color;
   }
 }
 

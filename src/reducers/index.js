@@ -9,6 +9,7 @@ import profile from './profile';
 import profileEdit from './profileEdit';
 import operationList from './operationList';
 import adminPage from './adminPage';
+import jardinConnectes from './jardinConnectes';
 
 export default combineReducers({
   weather,
@@ -20,4 +21,5 @@ export default combineReducers({
   profileEdit,
   operationList,
   adminPage,
+  jardinConnectes,
 });

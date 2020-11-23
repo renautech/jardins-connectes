@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Navigation from 'src/components/Navigation';
 
 const mapStateToProps = (state) => ({
-  isLogged: state.loginForm.isLogged,
+  isLogged: state.jardinConnectes.isLogged,
   isAdmin: state.loginForm.isAdmin,
 });
 

@@ -50,7 +50,8 @@ const myGarden = (state = initialState, action = {}) => {
       return {
         ...state,
         flagEmptyBoard: false,
-      }
+      };
+
     default:
       return state;
   }

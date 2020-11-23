@@ -12,14 +12,6 @@ const Header = ({ isLogged, logout, checkLogged }) => {
     logout();
   };
 
-  useEffect(() => {
-    if (!checkLogged) {
-      if (!isLogged) {
-        logout();
-      }
-    }
-  }, []);
-
   return (
     <div className="header">
       <img className="logo" src={serverIp + "/images/logo.png"} alt="logo" width="79" />

@@ -1,5 +1,5 @@
 /* eslint-disable arrow-body-style */
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Route,
   Redirect,
@@ -25,11 +25,20 @@ import './style.scss';
 
 const JardinConnectes = ({
   isLogged,
+  logged,
   isAdmin,
   isSigned,
   profileEdition,
   flagEmptyBoard,
 }) => {
+
+  useEffect( () => {
+    console.log('dans le useEffect de jardinConnectes')
+    if (sessionStorage.getItem("login")) {
+      logged();
+    };
+  }, []);
+
   return (
     <div className="jardinconnectes">
 
@@ -63,7 +72,7 @@ const JardinConnectes = ({
       </Route>
 
       <Route path="/inscription">
-        {isLogged && (
+        {logged && (
           <Redirect to="/mon-jardin" />
         )}
         {isSigned && (
@@ -85,7 +94,7 @@ const JardinConnectes = ({
       </Route>
 
       <Route exact path="/liste-operations">
-        {!isLogged && (
+        {logged && (
           <Redirect to="/connexion" />
         )}
         <Page>

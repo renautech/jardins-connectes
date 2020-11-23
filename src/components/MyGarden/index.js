@@ -25,7 +25,7 @@ const MyGarden = ({
   disableFlagEmptyBoard,
 }) => {
   useEffect(() => {
-    if (isLogged) {
+    if (sessionStorage.getItem("login")) {
       getAdmin();
       getUserBoards();
       getUserFamilies();

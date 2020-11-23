@@ -1,16 +1,17 @@
 /* eslint-disable prefer-arrow-callback */
 import axios from 'axios';
+import { browserHistory } from 'react-router';
+
 import {
   LOGIN,
   LOGOUT,
   GET_ADMIN,
-  isLogged,
   loginError,
   loggedOut,
   isAdmin,
 } from 'src/actions/loginForm';
 import { enableLoading } from 'src/actions/profile';
-
+import { logged } from 'src/actions/jardinConnectes';
 import { serverIp } from 'src/selectors/serverInfo';
 
 const loginForm = (store) => (next) => (action) => {
@@ -21,9 +22,10 @@ const loginForm = (store) => (next) => (action) => {
         .then((res) => {
           if (res.data.state === true) {
             console.log('login', res);
-            store.dispatch(isLogged());
             // Authorize fetching new profile data at next profile component rendering
             store.dispatch(enableLoading());
+            sessionStorage.setItem("login","user logged");
+            store.dispatch(logged());
           }
           else {
             console.log(res.data.message);
@@ -39,6 +41,8 @@ const loginForm = (store) => (next) => (action) => {
       axios.delete(`${serverIp}/v1/signout`, { withCredentials: true })
         .then((res) => {
           store.dispatch(loggedOut());
+          sessionStorage.removeItem("login");
+          //browserHistory.replace({pathname: '/'});
         })
         .catch((error) => {
           console.error(error);

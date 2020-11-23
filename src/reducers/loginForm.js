@@ -33,7 +33,7 @@ const loginForm = (state = initialState, action = {}) => {
         ...state,
         email: '',
         password: '',
-        isLogged: !state.isLogged,
+        isLogged: sessionStorage.getItem("login"),
         loginError: '',
       };
     case LOGGED_OUT:

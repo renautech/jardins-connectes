@@ -21,7 +21,6 @@ const OperationList = ({
 }) => {
   useEffect(() => {
     if (isLogged) {
-      console.log('useEffect isLogged operationlist')
       getFamilyOperations();
       getActiveFamilies();
     }

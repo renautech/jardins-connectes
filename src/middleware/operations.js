@@ -87,7 +87,6 @@ const operations = (store) => (next) => (action) => {
             withCredentials: true,
           })
             .then(function (res) {
-              // console.log(res);
               store.dispatch(resetAllOperationsValue());
               store.dispatch(getUserFamilies());
               store.dispatch(getUserBoards());
@@ -114,7 +113,6 @@ const operations = (store) => (next) => (action) => {
             withCredentials: true,
           })
             .then(function (res) {
-              console.log(res);
               store.dispatch(resetAllOperationsValue());
               store.dispatch(sendNotification(`"${boardName}" a bien été labourée`));
             })
@@ -138,7 +136,6 @@ const operations = (store) => (next) => (action) => {
             withCredentials: true,
           })
             .then(function (res) {
-              console.log(res);
             })
             .catch(function (error) {
               console.log(error);
@@ -175,7 +172,6 @@ const operations = (store) => (next) => (action) => {
             withCredentials: true,
           })
             .then(function (res) {
-              console.log(res);
               store.dispatch(resetAllOperationsValue());
               store.dispatch(sendNotification(`Planche "${boardName}" a bien été arrosée !`));
             })
@@ -200,7 +196,6 @@ const operations = (store) => (next) => (action) => {
             withCredentials: true,
           })
             .then(function (res) {
-              console.log(res);
               store.dispatch(resetAllOperationsValue());
               store.dispatch(sendNotification(`Planche "${boardName}" a bien été fertilisée !`));
             })
@@ -226,7 +221,6 @@ const operations = (store) => (next) => (action) => {
             withCredentials: true,
           })
             .then(function (res) {
-              console.log(res);
               store.dispatch(resetAllOperationsValue());
               store.dispatch(sendNotification(`Planche "${boardName}" a bien été traitée !`));
             })
@@ -250,7 +244,6 @@ const operations = (store) => (next) => (action) => {
             withCredentials: true,
           })
             .then(function (res) {
-              console.log(res);
               store.dispatch(resetAllOperationsValue());
               store.dispatch(sendNotification(`Planche "${boardName}" a bien été désherbée !`));
             })
@@ -275,7 +268,6 @@ const operations = (store) => (next) => (action) => {
             withCredentials: true,
           })
             .then(function (res) {
-              console.log(res);
               store.dispatch(resetAllOperationsValue());
               store.dispatch(sendNotification(`Récolte de "${boardName}" a bien été enregistrée !`));
             })
@@ -298,7 +290,6 @@ const operations = (store) => (next) => (action) => {
             withCredentials: true,
           })
             .then(function (res) {
-              console.log(res);
               store.dispatch(resetAllOperationsValue());
               store.dispatch(sendNotification(`La planche "${boardName}" a bien été supprimée.`));
               axios.delete(`${serverIp}/v1/boards/board/${boardId}/users/user/`,
@@ -306,7 +297,6 @@ const operations = (store) => (next) => (action) => {
                   withCredentials: true,
                 })
                 .then(function (res) {
-                  // console.log(res);
                   store.dispatch(resetAllOperationsValue());
                   store.dispatch(getUserFamilies());
                   store.dispatch(getUserBoards());

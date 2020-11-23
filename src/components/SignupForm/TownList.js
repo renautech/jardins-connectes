@@ -9,12 +9,10 @@ const TownList = ({ changeSignupFormValue, townList }) => {
   const options = [];
 
   townList.map((town) => (
-    // console.log("town " + town.city)
     options.push({ value: town.city, label: town.city })
   ));
 
   const handleOnChange = (selectedOption) => {
-    console.log({ selectedOption });
     changeSignupFormValue(selectedOption.value, 'town');
   };
 

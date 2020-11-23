@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './style.scss';
 import { serverIp } from 'src/selectors/serverInfo';
 
-const Header = ({ isLogged, logout, checkLogged }) => {
+const Header = ({ isLogged, logout }) => {
   const handleOnClick = () => {
     logout();
   };
@@ -48,7 +48,6 @@ const Header = ({ isLogged, logout, checkLogged }) => {
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   logout: PropTypes.func.isRequired,
-  checkLogged: PropTypes.bool.isRequired,
 };
 
 export default Header;

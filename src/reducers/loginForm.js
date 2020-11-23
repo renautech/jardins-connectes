@@ -11,7 +11,6 @@ export const initialState = {
   email: '',
   password: '',
   isLogged: false,
-  checkLogged: false,
   loginError: '',
   isAdmin: '',
 };
@@ -42,7 +41,6 @@ const loginForm = (state = initialState, action = {}) => {
         email: '',
         password: '',
         isLogged: false,
-        checkLogged: true,
         loginError: '',
         isAdmin: '',
       };

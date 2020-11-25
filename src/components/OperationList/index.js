@@ -25,8 +25,12 @@ const OperationList = ({
       getActiveFamilies();
     }
   }, []);
-
-  const pictureBuild = `${serverIp}${operationList.familyInfo.picture}`;
+  let pictureBuild;
+  if(operationList.familyInfo.picture=='') {
+    pictureBuild = `${serverIp}/images/icons8-group-of-vegetables-96.png`;
+  } else {
+    pictureBuild = `${serverIp}${operationList.familyInfo.picture}`;
+  }
 
   const handleOnChange = (event) => {
     getSelectedBoard(event.value);

@@ -1,7 +1,7 @@
 @use 'src/styles/vars' as v;
 
 .footer {
-
+  visibility: hidden;
   -webkit-box-shadow: 0px -10px 13px 3px rgba(0,0,0,0.53);
   -moz-box-shadow: 0px -10px 13px 3px rgba(0,0,0,0.53);
   box-shadow: 0px -10px 13px 3px rgba(0,0,0,0.53);
@@ -12,4 +12,10 @@
   height: 30px;
   padding: 0.5rem;
   background-color: v.$dark-color;
+}
+
+@media screen and (min-width: 600px) {
+  .footer {
+    visibility: visible;
+  }
 }

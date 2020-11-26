@@ -3,6 +3,8 @@
 .myGarden {
   background-color: v.$medium-color;
   border-radius: 25px;
+  margin-bottom : v.$xs-gut;
+  margin-top: v.$xs-gut;
   // border: 1px solid v.$darker-color;
   height: 95%;
   &__title {

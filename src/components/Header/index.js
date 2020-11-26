@@ -14,7 +14,7 @@ const Header = ({ isLogged, logout }) => {
 
   return (
     <div className="header">
-      <img className="logo" src={serverIp + "/images/logo.png"} alt="logo" width="79" />
+      {/* <img className="logo" src={serverIp + "/images/logo.png"} alt="logo" width="79" /> */}
       <h1 className="header-title"><NavLink to="/">LES JARDINS CONNECTES</NavLink></h1>
       <div className="header-links">
 
@@ -40,7 +40,7 @@ const Header = ({ isLogged, logout }) => {
         </div>
         )}
       </div>
-      <a className="navMobile" href="/navMobile"><img alt="navigationMobile" src="https://img.icons8.com/plasticine/100/000000/menu.png" height="50" /></a>
+      {/* <a className="navMobile" href="/navMobile"><img alt="navigationMobile" src="https://img.icons8.com/plasticine/100/000000/menu.png" height="50" /></a> */}
     </div>
   );
 };

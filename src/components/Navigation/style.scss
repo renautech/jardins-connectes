@@ -1,13 +1,13 @@
 @use 'src/styles/vars' as v;
 
 .navigation {
-  visibility: hidden;
+  // visibility: hidden;
   -webkit-box-shadow: 0px 10px 13px 3px rgba(0,0,0,0.53);
   -moz-box-shadow: 0px 10px 13px 3px rgba(0,0,0,0.53);
   box-shadow: 0px 10px 13px 3px rgba(0,0,0,0.53);
 }
 
-@media screen and (min-width:480px){
+// @media screen and (min-width:480px){
   .navigation {
     visibility: visible;
     text-align: center;
@@ -27,7 +27,7 @@
       }
     }
   }
-}
+// }
 
 @media screen and (min-width:800px){
   .navigation {

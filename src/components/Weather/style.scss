@@ -1,9 +1,12 @@
 @use 'src/styles/vars' as v;
 
 .weather {
+  order: 1;
   background-color: v.$medium-color;
-  min-height: 20%;
+  min-height: 8em;
   border-radius: 25px;
+  margin-bottom : v.$xs-gut;
+  margin-top: v.$xs-gut;
   // border: 1px solid v.$darker-color;
   &__title {
     text-align: center;
@@ -33,5 +36,11 @@
     justify-content: space-around;
     align-items: center;
     padding-bottom: 1em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .weather {
+    order: 0;
   }
 }

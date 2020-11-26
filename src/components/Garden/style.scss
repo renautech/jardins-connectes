@@ -10,11 +10,23 @@
   flex-wrap: wrap;
   justify-content: space-around;
   &__left {
+    order: 2;
     width: 45%;
     min-width: 350px;
   }
   &__right {
+    display: flex;
+    flex-direction: column;
     width: 45%;
     min-width: 350px;
+  }
+}
+
+
+@media screen and (min-width:800px){
+  .garden {
+    &__left {
+      order: 0;
+    }
   }
 }

@@ -6,6 +6,8 @@ import {
   IS_SIGNED,
 } from 'src/actions/signupForm';
 
+import { toast } from 'react-toastify';
+
 export const initialState = {
   nickName: '',
   firstName: '',
@@ -48,8 +50,9 @@ const signupForm = (state = initialState, action = {}) => {
         newPostcodeFlag: true,
       };
     case IS_SIGNED:
+      toast.success("Veuillez valider votre email en cliquant sur le lien envoyé sur votre adresse email");
       return {
-        ...state,
+        ...initialState,
         isSigned: true,
       };
     default:

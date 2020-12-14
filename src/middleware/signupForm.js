@@ -8,6 +8,8 @@ import {
   isSigned,
 } from 'src/actions/signupForm';
 
+import { ToastContainer, Zoom } from 'react-toastify';
+
 import { serverIp } from 'src/selectors/serverInfo';
 
 const signupForm = (store) => (next) => (action) => {

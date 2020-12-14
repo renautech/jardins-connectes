@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
+import { ToastContainer, Zoom } from 'react-toastify';
 
 import TownList from './TownList';
 
@@ -144,6 +145,18 @@ const SignupForm = (
           INSCRIPTION
         </button>
       </form>
+      <ToastContainer
+        transition={Zoom}
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

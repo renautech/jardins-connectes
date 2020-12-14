@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import Page from 'src/components/Page';
 import Description from 'src/components/Description';
 import HomeVideo from 'src/components/HomeVideo';
+import SignupEmailValidation from 'src/components/SignupForm/SignupEmailValidation';
 import LoginForm from 'src/containers/LoginForm';
 import SignupForm from 'src/containers/SignupForm';
 import NavigationMobile from 'src/containers/NavigationMobile';
@@ -71,11 +72,12 @@ const JardinConnectes = ({
       </Route>
 
       <Route path="/inscription">
-        {isSigned && (
-          <Redirect to="/connexion" />
-        )}
+        
         <Page>
           <SignupForm />
+          {isSigned && (
+            <SignupEmailValidation />
+          )}
         </Page>
       </Route>
 

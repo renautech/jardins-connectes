@@ -6,6 +6,7 @@ export const LOGOUT = 'LOGOUT';
 export const LOGGED_OUT = 'LOGGED_OUT';
 export const GET_ADMIN = 'GET_ADMIN';
 export const IS_ADMIN = 'IS_ADMIN';
+export const MESSAGE = 'MESSAGE';
 
 export const getAdmin = () => ({
   type: GET_ADMIN,
@@ -41,3 +42,8 @@ export const logout = () => ({
 export const loggedOut = () => ({
   type: LOGGED_OUT,
 });
+
+export const message = (message) => ({
+  type: MESSAGE,
+  message,
+})

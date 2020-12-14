@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 import {
   CHANGE_EMAIL,
   CHANGE_PASSWORD,
@@ -5,6 +7,7 @@ import {
   LOGIN_ERROR,
   LOGGED_OUT,
   IS_ADMIN,
+  MESSAGE
 } from 'src/actions/loginForm';
 
 export const initialState = {
@@ -45,6 +48,11 @@ const loginForm = (state = initialState, action = {}) => {
       return {
         ...state,
         isAdmin: true,
+      };
+    case MESSAGE:
+      toast.warning(action.message);
+      return {
+        ...state,
       };
     default:
       return state;

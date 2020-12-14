@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ToastContainer, Zoom } from 'react-toastify';
 
 import './style.scss';
 
@@ -54,6 +55,18 @@ const LoginForm = ({
           CONNEXION
         </button>
       </form>
+      <ToastContainer
+        transition={Zoom}
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
+
 import {
   LOGIN,
   LOGOUT,
@@ -9,6 +10,7 @@ import {
   loginError,
   loggedOut,
   isAdmin,
+  message
 } from 'src/actions/loginForm';
 import { enableLoading } from 'src/actions/profile';
 import { logged } from 'src/actions/jardinConnectes';
@@ -28,6 +30,8 @@ const loginForm = (store) => (next) => (action) => {
           }
           else {
             console.log(res.data.message);
+            store.dispatch(message(res.data.message));
+           
           }
         })
         .catch((error) => {

@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
   passwordValue: state.loginForm.password,
   loginError: state.loginForm.loginError,
   logged: state.jardinConnectes.logged,
+  message: state.loginForm.message,
 });
 
 const mapDispatchToProps = (dispatch) => ({

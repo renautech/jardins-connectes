@@ -13,6 +13,9 @@ const FamilyField = ({
   name,
 }) => {
   const options = data.map((option) => {
+    data.sort(function(a,b) {
+      return a.name.localeCompare(b.name);
+    });
     return (
       <Options key={option.family_id} keyData={option.family_id} value={option.name} />
     );

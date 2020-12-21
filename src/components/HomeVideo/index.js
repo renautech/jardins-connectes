@@ -8,9 +8,7 @@ const HomeVideo = () => {
   return (
     <div className="homevideo">
       <YouTube
-        video="_6xxhSvv52E"
-        // width="960"
-        // height="540"
+        video="doV8TvNGKbE"
       />
     </div>
   );

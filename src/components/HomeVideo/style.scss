@@ -3,7 +3,6 @@
 
 .homevideo {
 
-  // margin: 0 auto;
 }
 
 .homevideo iframe{
@@ -17,11 +16,9 @@
 
  @media screen and (min-width:640px){
   .homevideo{
-    // padding-bottom:300px;  // to set according to real video height
     
    }
   .homevideo iframe {
-    // left:calc(50%-320px);  // to set according to real video width
     width: 480px;
     height: 270px;
     
@@ -31,10 +28,8 @@
 
  @media screen and (min-width:1000px){
   .homevideo{
-    // padding-bottom:300px;  // to set according to real video height
    }
   .homevideo iframe {
-    // left:calc(50%-320px);  // to set according to real video width
     width: 960px;
     height: 540px;
    }
